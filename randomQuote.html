@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quote of the day</title>
+</head>
+<body>
+    <h1>Quote generator</h1>
+    <div class="container" id="con"></div>
+
+    <script>
+       const quotes = [
+  "The best way to get started is to quit talking and begin doing. – Walt Disney",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+  "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+  "The future belongs to those who believe in the beauty of their dreams. – Eleanor Roosevelt",
+  "It does not matter how slowly you go as long as you do not stop. – Confucius",
+  "Everything you’ve ever wanted is on the other side of fear. – George Addair",
+  "Hardships often prepare ordinary people for an extraordinary destiny. – C.S. Lewis",
+  "Believe you can and you're halfway there. – Theodore Roosevelt",
+  "Dream big and dare to fail. – Norman Vaughan",
+  "Act as if what you do makes a difference. It does. – William James",
+  "Keep your face always toward the sunshine—and shadows will fall behind you. – Walt Whitman",
+  "Opportunities don't happen. You create them. – Chris Grosser",
+  "Try not to become a man of success. Rather become a man of value. – Albert Einstein",
+  "Your time is limited, don’t waste it living someone else’s life. – Steve Jobs",
+  "Great minds discuss ideas; average minds discuss events; small minds discuss people. – Eleanor Roosevelt",
+  "What you get by achieving your goals is not as important as what you become by achieving your goals. – Zig Ziglar",
+  "Success usually comes to those who are too busy to be looking for it. – Henry David Thoreau",
+  "Don’t be afraid to give up the good to go for the great. – John D. Rockefeller",
+  "If you are not willing to risk the usual, you will have to settle for the ordinary. – Jim Rohn",
+  "Do one thing every day that scares you. – Eleanor Roosevelt"
+];
+
+
+
+const button=document.createElement('button');
+button.innerHTML='quote';
+con.appendChild(button);
+
+button.onclick=generate;
+
+function generate(){
+    const randomIndex=parseInt(Math.floor(Math.random()*quotes.length));
+    const selectedQuote= quotes[randomIndex];
+    const [quoteText, author] = selectedQuote.split('–');
+
+  
+
+    
+    
+    const card=document.createElement('div');
+    card.className='card';
+    card.style.width='18rem';
+     
+    const call=document.createElement('div');
+    call.className='card-body';
+
+    const h5=document.createElement('h5');
+    h5.className='card-title'
+    h5.innerHTML=author;
+
+    const par=document.createElement('p');
+    par.className='card-text';
+    par.innerHTML=quoteText;
+
+
+ con.appendChild(card);
+ card.appendChild(call);
+ call.appendChild(h5);
+ call.appendChild(par);
+
+
+}
+
+
+
+
+
+    </script>
+</body>
+</html>
